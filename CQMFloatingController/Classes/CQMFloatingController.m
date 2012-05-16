@@ -33,7 +33,7 @@
 
 #define kDefaultMaskColor  [UIColor colorWithWhite:0 alpha:0.5]
 #define kDefaultFrameColor [UIColor colorWithRed:0.10f green:0.12f blue:0.16f alpha:1.00f]
-#define kDefaultFrameSize  CGSizeMake(320 - 44, 460 - 44)
+#define kDefaultFrameSize  CGSizeMake(320 - 66, 460 - 66)
 #define kFramePadding      5.0f
 #define kRootKey           @"root"
 #define kShadowColor       [UIColor blackColor]
