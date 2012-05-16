@@ -104,6 +104,7 @@
 	CGContextAddPath(context, path);
 	CGContextSetFillColorWithColor(context, [self.baseColor CGColor]);
 	CGContextFillPath(context);
+	CGPathRelease(path);
 	CGContextRestoreGState(context);
 	
 	// Highlight
@@ -131,9 +132,8 @@
 								0);
 	CGGradientRelease(gradient);
 	CGColorSpaceRelease(colorSpace);
-	CGContextRestoreGState(context);
-	
 	CGPathRelease(path);
+	CGContextRestoreGState(context);
 }
 
 
