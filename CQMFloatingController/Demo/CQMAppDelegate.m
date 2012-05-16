@@ -49,12 +49,18 @@
 
 
 - (IBAction)showButtonAction:(id)sender {
-	DemoTableViewController *demoViewController = [[DemoTableViewController alloc] init];
+	// To use CQMFloatingViewController:
 	
+	// 1. Prepare a content view controller
+	DemoTableViewController *demoViewController = [[[DemoTableViewController alloc] init] autorelease];
+	
+	
+	// 2. Get shared floating view controller
 	CQMFloatingViewController *floatingViewController = [CQMFloatingViewController sharedFloatingController];
+	
+	// 3. Show floating view controller with specified content
 	[floatingViewController presentWithContentViewController:demoViewController
 													animated:YES];
-	[demoViewController release];
 }
 
 
@@ -64,7 +70,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self.window makeKeyAndVisible];
-	
     return YES;
 }
 
