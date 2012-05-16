@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F54E32A615620EE70057A34F /* CQMFloatingFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */; };
-		F54E32A715620EE70057A34F /* CQMFloatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E329D15620EE70057A34F /* CQMFloatingViewController.m */; };
+		F54E32A715620EE70057A34F /* CQMFloatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E329D15620EE70057A34F /* CQMFloatingController.m */; };
 		F54E32A815620EE70057A34F /* CQMFloatingNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32A015620EE70057A34F /* CQMFloatingNavigationBar.m */; };
 		F54E32AA15620EE70057A34F /* CQMPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32A515620EE70057A34F /* CQMPathUtilities.m */; };
 		F54E32AD15620F2F0057A34F /* CQMFloatingContentOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32AC15620F2F0057A34F /* CQMFloatingContentOverlayView.m */; };
@@ -41,8 +41,8 @@
 /* Begin PBXFileReference section */
 		F54E329A15620EE70057A34F /* CQMFloatingFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingFrameView.h; sourceTree = "<group>"; };
 		F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingFrameView.m; sourceTree = "<group>"; };
-		F54E329C15620EE70057A34F /* CQMFloatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingViewController.h; sourceTree = "<group>"; };
-		F54E329D15620EE70057A34F /* CQMFloatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingViewController.m; sourceTree = "<group>"; };
+		F54E329C15620EE70057A34F /* CQMFloatingController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CQMFloatingController.h; sourceTree = "<group>"; };
+		F54E329D15620EE70057A34F /* CQMFloatingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingController.m; sourceTree = "<group>"; };
 		F54E329F15620EE70057A34F /* CQMFloatingNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingNavigationBar.h; sourceTree = "<group>"; };
 		F54E32A015620EE70057A34F /* CQMFloatingNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingNavigationBar.m; sourceTree = "<group>"; };
 		F54E32A415620EE70057A34F /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMPathUtilities.h; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 				F54E32A315620EE70057A34F /* Utility */,
 				F54E329A15620EE70057A34F /* CQMFloatingFrameView.h */,
 				F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */,
-				F54E329C15620EE70057A34F /* CQMFloatingViewController.h */,
-				F54E329D15620EE70057A34F /* CQMFloatingViewController.m */,
+				F54E329C15620EE70057A34F /* CQMFloatingController.h */,
+				F54E329D15620EE70057A34F /* CQMFloatingController.m */,
 				F54E32AB15620F2F0057A34F /* CQMFloatingContentOverlayView.h */,
 				F54E32AC15620F2F0057A34F /* CQMFloatingContentOverlayView.m */,
 			);
@@ -323,7 +323,7 @@
 				F5ED3EA315620A810058C7F1 /* CQMAppDelegate.m in Sources */,
 				F5ED3EA415620A810058C7F1 /* main.m in Sources */,
 				F54E32A615620EE70057A34F /* CQMFloatingFrameView.m in Sources */,
-				F54E32A715620EE70057A34F /* CQMFloatingViewController.m in Sources */,
+				F54E32A715620EE70057A34F /* CQMFloatingController.m in Sources */,
 				F54E32A815620EE70057A34F /* CQMFloatingNavigationBar.m in Sources */,
 				F54E32AA15620EE70057A34F /* CQMPathUtilities.m in Sources */,
 				F54E32AD15620F2F0057A34F /* CQMFloatingContentOverlayView.m in Sources */,

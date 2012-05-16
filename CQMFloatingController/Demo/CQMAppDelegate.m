@@ -24,7 +24,7 @@
 //
 
 #import "CQMAppDelegate.h"
-#import "CQMFloatingViewController.h"
+#import "CQMFloatingController.h"
 #import "DemoTableViewController.h"
 
 
@@ -32,7 +32,7 @@
 
 
 - (void)dealloc {
-	[_window release];
+	[window_ release];
     [super dealloc];
 }
 
@@ -41,7 +41,7 @@
 #pragma mark Property
 
 
-@synthesize window = _window;
+@synthesize window = window_;
 
 
 #pragma mark -
@@ -54,9 +54,8 @@
 	// 1. Prepare a content view controller
 	DemoTableViewController *demoViewController = [[[DemoTableViewController alloc] init] autorelease];
 	
-	
 	// 2. Get shared floating view controller
-	CQMFloatingViewController *floatingViewController = [CQMFloatingViewController sharedFloatingController];
+	CQMFloatingController *floatingViewController = [CQMFloatingController sharedFloatingController];
 	
 	// 3. Show floating view controller with specified content
 	[floatingViewController presentWithContentViewController:demoViewController

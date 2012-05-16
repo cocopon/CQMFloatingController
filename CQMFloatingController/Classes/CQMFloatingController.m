@@ -24,7 +24,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "CQMFloatingViewController.h"
+#import "CQMFloatingController.h"
 #import "CQMFloatingContentOverlayView.h"
 #import "CQMFloatingFrameView.h"
 #import "CQMFloatingNavigationBar.h"
@@ -42,7 +42,7 @@
 #define kShadowRadius      10.0f
 
 
-@interface CQMFloatingViewController()
+@interface CQMFloatingController()
 
 @property (nonatomic, readonly, retain) UIControl *maskControl;
 @property (nonatomic, readonly, retain) CQMFloatingFrameView *frameView;
@@ -58,7 +58,7 @@
 @end
 
 
-@implementation CQMFloatingViewController {
+@implementation CQMFloatingController {
 @private
 	BOOL presented_;
 	// View
@@ -193,11 +193,11 @@
 #pragma mark Singleton
 
 
-+ (CQMFloatingViewController*)sharedFloatingController {
-	static CQMFloatingViewController *instance;
++ (CQMFloatingController*)sharedFloatingController {
+	static CQMFloatingController *instance;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^ {
-		instance = [[CQMFloatingViewController alloc] init];
+		instance = [[CQMFloatingController alloc] init];
 	});
 	return instance;
 }

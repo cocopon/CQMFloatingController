@@ -30,12 +30,12 @@
 @class CQMFloatingNavigationBar;
 
 
-@interface CQMFloatingViewController : UIViewController
+@interface CQMFloatingController : UIViewController
 
 @property (nonatomic) CGSize frameSize;
 @property (nonatomic, retain) UIColor *frameColor;
 
-+ (CQMFloatingViewController*)sharedFloatingController;
++ (CQMFloatingController*)sharedFloatingController;
 
 - (void)presentWithContentViewController:(UIViewController*)contentViewController animated:(BOOL)animated;
 - (void)dismissAnimated:(BOOL)animated;
