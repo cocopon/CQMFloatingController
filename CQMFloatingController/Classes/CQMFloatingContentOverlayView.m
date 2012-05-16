@@ -29,7 +29,7 @@
 
 #define kDefaultCornerRadius 5.0f
 #define kShadowOffset        CGSizeMake(0, 1.0f)
-#define kShadowBlur          5.0f
+#define kShadowBlur          2.0f
 #define kShadowColor         [UIColor colorWithWhite:0 alpha:0.8f]
 
 

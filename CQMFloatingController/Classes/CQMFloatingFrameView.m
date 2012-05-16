@@ -27,11 +27,13 @@
 #import "CQMPathUtilities.h"
 
 
+#define kLightBorderWidth    1.0f
 #define kHighlightHeight     22.0f
 #define kHighlightMargin     1.0f
+#define kLightBorderColor    [UIColor colorWithWhite:1.00f alpha:0.10f]
 #define kStartHighlightColor [UIColor colorWithWhite:1.00f alpha:0.40f]
 #define kEndHighlightColor   [UIColor colorWithWhite:1.00f alpha:0.05f]
-#define kDefaultCornerRadius 10.0f
+#define kDefaultCornerRadius 8.0f
 
 
 @implementation CQMFloatingFrameView {
@@ -93,14 +95,24 @@
 	CGSize viewSize = [self frame].size;
 	CGPathRef path;
 	
-	// Base
+	// Light border
 	CGContextSaveGState(context);
+	CGFloat borderRadius = radius + kLightBorderWidth;
 	path = CQMPathCreateRoundingRect(CGPointZero,
 									 CGPointMake(viewSize.width, viewSize.height),
-									 radius,
-									 radius,
-									 radius,
-									 radius);
+									 borderRadius, borderRadius, borderRadius, borderRadius);
+	CGContextAddPath(context, path);
+	CGContextSetFillColorWithColor(context, [kLightBorderColor CGColor]);
+	CGContextFillPath(context);
+	CGPathRelease(path);
+	CGContextRestoreGState(context);
+	
+	// Base
+	CGContextSaveGState(context);
+	path = CQMPathCreateRoundingRect(CGPointMake(kLightBorderWidth, kLightBorderWidth),
+									 CGPointMake(viewSize.width - kLightBorderWidth,
+												 viewSize.height - kLightBorderWidth),
+									 radius, radius, radius, radius);
 	CGContextAddPath(context, path);
 	CGContextSetFillColorWithColor(context, [self.baseColor CGColor]);
 	CGContextFillPath(context);
@@ -115,8 +127,9 @@
 					   nil];
 	CGFloat locations[] = {0, 1.0f};
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)colors, locations);
-	CGRect highlightRect = CGRectMake(kHighlightMargin, kHighlightMargin,
-									  viewSize.width - kHighlightMargin * 2,
+	CGFloat highlightMargin = kLightBorderWidth + kHighlightMargin;
+	CGRect highlightRect = CGRectMake(highlightMargin, highlightMargin,
+									  viewSize.width - highlightMargin * 2,
 									  kHighlightHeight);
 	CGFloat highlightRadius = radius - kHighlightMargin;
 	CGContextSaveGState(context);

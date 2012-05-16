@@ -34,7 +34,7 @@
 #define kDefaultMaskColor  [UIColor colorWithWhite:0 alpha:0.5]
 #define kDefaultFrameColor [UIColor colorWithRed:0.10f green:0.12f blue:0.16f alpha:1.00f]
 #define kDefaultFrameSize  CGSizeMake(320 - 44, 460 - 44)
-#define kFramePadding      10.0f
+#define kFramePadding      5.0f
 #define kRootKey           @"root"
 #define kShadowColor       [UIColor blackColor]
 #define kShadowOffset      CGSizeMake(0, 2.0f)
@@ -277,7 +277,7 @@
 		[UIView beginAnimations:nil context:NULL];
 	}
 	
-	[self.view setAlpha:1];
+	[self.view setAlpha:1.0f];
 	
 	if (animated) {
 		[UIView commitAnimations];
