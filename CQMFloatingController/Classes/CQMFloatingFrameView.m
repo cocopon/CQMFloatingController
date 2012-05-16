@@ -144,6 +144,7 @@
 								CGPointMake(0, kHighlightHeight),
 								0);
 	CGGradientRelease(gradient);
+	[colors release];
 	CGColorSpaceRelease(colorSpace);
 	CGPathRelease(path);
 	CGContextRestoreGState(context);
