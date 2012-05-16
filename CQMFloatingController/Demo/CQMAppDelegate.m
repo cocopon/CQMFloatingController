@@ -49,17 +49,17 @@
 
 
 - (IBAction)showButtonAction:(id)sender {
-	// To use CQMFloatingViewController:
+	// To use CQMFloatingController:
 	
 	// 1. Prepare a content view controller
 	DemoTableViewController *demoViewController = [[[DemoTableViewController alloc] init] autorelease];
 	
-	// 2. Get shared floating view controller
-	CQMFloatingController *floatingViewController = [CQMFloatingController sharedFloatingController];
+	// 2. Get shared floating controller
+	CQMFloatingController *floatingController = [CQMFloatingController sharedFloatingController];
 	
-	// 3. Show floating view controller with specified content
-	[floatingViewController presentWithContentViewController:demoViewController
-													animated:YES];
+	// 3. Show floating controller with specified content
+	[floatingController presentWithContentViewController:demoViewController
+												animated:YES];
 }
 
 

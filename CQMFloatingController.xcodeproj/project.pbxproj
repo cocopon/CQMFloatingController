@@ -103,10 +103,10 @@
 				F54E32A315620EE70057A34F /* Utility */,
 				F54E329A15620EE70057A34F /* CQMFloatingFrameView.h */,
 				F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */,
-				F54E329C15620EE70057A34F /* CQMFloatingController.h */,
-				F54E329D15620EE70057A34F /* CQMFloatingController.m */,
 				F54E32AB15620F2F0057A34F /* CQMFloatingContentOverlayView.h */,
 				F54E32AC15620F2F0057A34F /* CQMFloatingContentOverlayView.m */,
+				F54E329C15620EE70057A34F /* CQMFloatingController.h */,
+				F54E329D15620EE70057A34F /* CQMFloatingController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
