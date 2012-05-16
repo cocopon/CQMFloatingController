@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5455C8E156465C3009DD74D /* CQMFloatingNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */; };
+		F5455C8F156465C3009DD74D /* CQMPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F5455C8D156465C3009DD74D /* CQMPathUtilities.m */; };
 		F54E32A615620EE70057A34F /* CQMFloatingFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */; };
 		F54E32A715620EE70057A34F /* CQMFloatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E329D15620EE70057A34F /* CQMFloatingController.m */; };
-		F54E32A815620EE70057A34F /* CQMFloatingNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32A015620EE70057A34F /* CQMFloatingNavigationBar.m */; };
-		F54E32AA15620EE70057A34F /* CQMPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32A515620EE70057A34F /* CQMPathUtilities.m */; };
 		F54E32AD15620F2F0057A34F /* CQMFloatingContentOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32AC15620F2F0057A34F /* CQMFloatingContentOverlayView.m */; };
 		F54E32B0156271030057A34F /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32AF156271030057A34F /* DemoTableViewController.m */; };
 		F54E32B3156273780057A34F /* DemoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E32B2156273780057A34F /* DemoDetailViewController.m */; };
@@ -39,14 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5455C8A156465C3009DD74D /* CQMFloatingNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingNavigationBar.h; sourceTree = "<group>"; };
+		F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingNavigationBar.m; sourceTree = "<group>"; };
+		F5455C8C156465C3009DD74D /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMPathUtilities.h; sourceTree = "<group>"; };
+		F5455C8D156465C3009DD74D /* CQMPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMPathUtilities.m; sourceTree = "<group>"; };
 		F54E329A15620EE70057A34F /* CQMFloatingFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingFrameView.h; sourceTree = "<group>"; };
 		F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingFrameView.m; sourceTree = "<group>"; };
-		F54E329C15620EE70057A34F /* CQMFloatingController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CQMFloatingController.h; sourceTree = "<group>"; };
+		F54E329C15620EE70057A34F /* CQMFloatingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingController.h; sourceTree = "<group>"; };
 		F54E329D15620EE70057A34F /* CQMFloatingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingController.m; sourceTree = "<group>"; };
-		F54E329F15620EE70057A34F /* CQMFloatingNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingNavigationBar.h; sourceTree = "<group>"; };
-		F54E32A015620EE70057A34F /* CQMFloatingNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingNavigationBar.m; sourceTree = "<group>"; };
-		F54E32A415620EE70057A34F /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMPathUtilities.h; sourceTree = "<group>"; };
-		F54E32A515620EE70057A34F /* CQMPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMPathUtilities.m; sourceTree = "<group>"; };
 		F54E32AB15620F2F0057A34F /* CQMFloatingContentOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingContentOverlayView.h; sourceTree = "<group>"; };
 		F54E32AC15620F2F0057A34F /* CQMFloatingContentOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingContentOverlayView.m; sourceTree = "<group>"; };
 		F54E32AE156271030057A34F /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
@@ -99,34 +99,18 @@
 		F54E329915620EE70057A34F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F54E329E15620EE70057A34F /* Navigation */,
-				F54E32A315620EE70057A34F /* Utility */,
+				F5455C8C156465C3009DD74D /* CQMPathUtilities.h */,
+				F5455C8D156465C3009DD74D /* CQMPathUtilities.m */,
 				F54E329A15620EE70057A34F /* CQMFloatingFrameView.h */,
 				F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */,
+				F5455C8A156465C3009DD74D /* CQMFloatingNavigationBar.h */,
+				F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */,
 				F54E32AB15620F2F0057A34F /* CQMFloatingContentOverlayView.h */,
 				F54E32AC15620F2F0057A34F /* CQMFloatingContentOverlayView.m */,
 				F54E329C15620EE70057A34F /* CQMFloatingController.h */,
 				F54E329D15620EE70057A34F /* CQMFloatingController.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		F54E329E15620EE70057A34F /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				F54E329F15620EE70057A34F /* CQMFloatingNavigationBar.h */,
-				F54E32A015620EE70057A34F /* CQMFloatingNavigationBar.m */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		F54E32A315620EE70057A34F /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				F54E32A415620EE70057A34F /* CQMPathUtilities.h */,
-				F54E32A515620EE70057A34F /* CQMPathUtilities.m */,
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		F5C422341560BF2300F7E3EE = {
@@ -324,11 +308,11 @@
 				F5ED3EA415620A810058C7F1 /* main.m in Sources */,
 				F54E32A615620EE70057A34F /* CQMFloatingFrameView.m in Sources */,
 				F54E32A715620EE70057A34F /* CQMFloatingController.m in Sources */,
-				F54E32A815620EE70057A34F /* CQMFloatingNavigationBar.m in Sources */,
-				F54E32AA15620EE70057A34F /* CQMPathUtilities.m in Sources */,
 				F54E32AD15620F2F0057A34F /* CQMFloatingContentOverlayView.m in Sources */,
 				F54E32B0156271030057A34F /* DemoTableViewController.m in Sources */,
 				F54E32B3156273780057A34F /* DemoDetailViewController.m in Sources */,
+				F5455C8E156465C3009DD74D /* CQMFloatingNavigationBar.m in Sources */,
+				F5455C8F156465C3009DD74D /* CQMPathUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
