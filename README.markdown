@@ -5,7 +5,7 @@ CQMFloatingController
 Overview
 --------
 CQMFloatingController is a floating UI component with navigation bar.
-You can push/pop content view controllers on it.
+You can push/pop a content view controller on it.
 
 This component is ported from [Calqum](http://www.dotapon.sakura.ne.jp/apps/calqum2/index_en.html), customizable calculator for iPhone.
 
@@ -18,14 +18,22 @@ Features
 
 How to Use
 ----------
+Add all files in CQMFloatingController/Classes to your project, and write code as below:
+
 ```Objective-C
-// Prepare content view controller
-UIViewController *viewController;
-    
-// Show floating controller
-CQMFloatingController *floatingController = [CQMFloatingController sharedFloatingController];
-[floatingController presentWithContentViewController:viewController
-                                            animated:YES];
+// Import a required class
+#import "CQMFloatingController.h"
+
+
+- (void)show {
+    // Prepare content view controller
+    SomeViewController *viewController = [[[SomeViewController alloc] init] autorelease];
+        
+    // Show floating controller
+    CQMFloatingController *floatingController = [CQMFloatingController sharedFloatingController];
+    [floatingController presentWithContentViewController:viewController
+                                                animated:YES];
+}
 ```
 
 
