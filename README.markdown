@@ -39,16 +39,12 @@ Add all files in CQMFloatingController/Classes to your project, and write code a
 
 Screenshots
 -----------
-![][screenshot0]
-![][screenshot1]
+![Screenshot0](http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/0.png)
+![Screenshot1](http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/1.png)
 
 
 License
 -------
 MIT License.
 See LICENSE.txt for more information.
-
-
-[screenshot0]: http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/0.png
-[screenshot1]: http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/1.png
 
