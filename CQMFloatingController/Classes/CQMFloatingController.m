@@ -38,7 +38,7 @@
 #define kRootKey           @"root"
 #define kShadowColor       [UIColor blackColor]
 #define kShadowOffset      CGSizeMake(0, 2.0f)
-#define kShadowOpacity     0.80f
+#define kShadowOpacity     0.70f
 #define kShadowRadius      10.0f
 
 
