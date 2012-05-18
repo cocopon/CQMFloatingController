@@ -267,8 +267,8 @@
 	
 	// Shadow
 	CGFloat radius = [self.frameView cornerRadius];
-	CGPathRef shadowPath = CQMPathCreateRoundingRect(CGPointMake(0, 0),
-													 CGPointMake(frameSize.width, frameSize.height),
+	CGPathRef shadowPath = CQMPathCreateRoundingRect(CGRectMake(0, 0,
+																frameSize.width, frameSize.height),
 													 radius, radius, radius, radius);
 	[frameView.layer setShadowPath:shadowPath];
 	CGPathRelease(shadowPath);

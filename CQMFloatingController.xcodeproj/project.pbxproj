@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		F5455C8A156465C3009DD74D /* CQMFloatingNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingNavigationBar.h; sourceTree = "<group>"; };
 		F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingNavigationBar.m; sourceTree = "<group>"; };
-		F5455C8C156465C3009DD74D /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMPathUtilities.h; sourceTree = "<group>"; };
+		F5455C8C156465C3009DD74D /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CQMPathUtilities.h; sourceTree = "<group>"; };
 		F5455C8D156465C3009DD74D /* CQMPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMPathUtilities.m; sourceTree = "<group>"; };
 		F54E329A15620EE70057A34F /* CQMFloatingFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingFrameView.h; sourceTree = "<group>"; };
 		F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingFrameView.m; sourceTree = "<group>"; };

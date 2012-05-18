@@ -98,8 +98,8 @@
 	// Light border
 	CGContextSaveGState(context);
 	CGFloat borderRadius = radius + kLightBorderWidth;
-	path = CQMPathCreateRoundingRect(CGPointZero,
-									 CGPointMake(viewSize.width, viewSize.height),
+	path = CQMPathCreateRoundingRect(CGRectMake(0, 0,
+												viewSize.width, viewSize.height),
 									 borderRadius, borderRadius, borderRadius, borderRadius);
 	CGContextAddPath(context, path);
 	CGContextSetFillColorWithColor(context, [kLightBorderColor CGColor]);
@@ -109,9 +109,8 @@
 	
 	// Base
 	CGContextSaveGState(context);
-	path = CQMPathCreateRoundingRect(CGPointMake(kLightBorderWidth, kLightBorderWidth),
-									 CGPointMake(viewSize.width - kLightBorderWidth,
-												 viewSize.height - kLightBorderWidth),
+	path = CQMPathCreateRoundingRect(CGRectMake(kLightBorderWidth, kLightBorderWidth,
+												viewSize.width, viewSize.height),
 									 radius, radius, radius, radius);
 	CGContextAddPath(context, path);
 	CGContextSetFillColorWithColor(context, [self.baseColor CGColor]);
@@ -133,9 +132,7 @@
 									  kHighlightHeight);
 	CGFloat highlightRadius = radius - kHighlightMargin;
 	CGContextSaveGState(context);
-	path = CQMPathCreateRoundingRect(highlightRect.origin,
-									 CGPointMake(highlightRect.origin.x + highlightRect.size.width,
-												 highlightRect.origin.y + highlightRect.size.height),
+	path = CQMPathCreateRoundingRect(highlightRect,
 									 0, 0, highlightRadius, highlightRadius);
 	CGContextAddPath(context, path);
 	CGContextClip(context);

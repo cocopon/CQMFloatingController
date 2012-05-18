@@ -26,18 +26,10 @@
 #import "CQMPathUtilities.h"
 
 
-/**
- * Creates a path of specified rounding rect.
- *
- * @param tlPoint
- * @param brPoint
- * @param blRadius
- * @param brRadius
- * @param trRadius
- * @param tlRadius
- * @return
- */
-CGPathRef CQMPathCreateRoundingRect(CGPoint tlPoint, CGPoint brPoint, CGFloat blRadius, CGFloat brRadius, CGFloat trRadius, CGFloat tlRadius) {
+CGPathRef CQMPathCreateRoundingRect(CGRect rect, CGFloat blRadius, CGFloat brRadius, CGFloat trRadius, CGFloat tlRadius) {
+	CGPoint tlPoint = rect.origin;
+	CGPoint brPoint = CGPointMake(rect.origin.x + rect.size.width,
+								  rect.origin.y + rect.size.height);
 	CGMutablePathRef path = CGPathCreateMutable();
 	
 	CGPathMoveToPoint(path, NULL, tlPoint.x + tlRadius, tlPoint.y);
