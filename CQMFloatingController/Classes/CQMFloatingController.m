@@ -261,8 +261,8 @@
 	UIView *contentOverlay = [self contentOverlayView];
 	[contentOverlay setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
 	[contentOverlay setFrame:CGRectMake(0, navBarHeight - contentFrameWidth,
-										contentFrame.size.width,
-										contentFrame.size.height - (navBarHeight - contentFrameWidth))];
+										contentSize.width,
+										contentSize.height - (navBarHeight - contentFrameWidth))];
 	[contentOverlay.superview bringSubviewToFront:contentOverlay];
 	
 	// Shadow

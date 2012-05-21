@@ -110,7 +110,8 @@
 	// Base
 	CGContextSaveGState(context);
 	path = CQMPathCreateRoundingRect(CGRectMake(kLightBorderWidth, kLightBorderWidth,
-												viewSize.width, viewSize.height),
+												viewSize.width - kLightBorderWidth * 2,
+												viewSize.height - kLightBorderWidth * 2),
 									 radius, radius, radius, radius);
 	CGContextAddPath(context, path);
 	CGContextSetFillColorWithColor(context, [self.baseColor CGColor]);

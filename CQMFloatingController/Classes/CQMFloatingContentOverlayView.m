@@ -100,7 +100,8 @@
 	CGContextSaveGState(context);
 	CGFloat frameWidth = [CQMFloatingContentOverlayView frameWidth];
 	path = CQMPathCreateRoundingRect(CGRectMake(frameWidth, frameWidth,
-												viewSize.width, viewSize.height),
+												viewSize.width - frameWidth * 2,
+												viewSize.height - frameWidth * 2),
 									 radius, radius, radius, radius);
 	CGContextAddRect(context, CGRectMake(0, 0,
 										 viewSize.width, viewSize.height));
