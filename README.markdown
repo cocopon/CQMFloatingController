@@ -18,19 +18,22 @@ Features
 
 How to Use
 ----------
-Add all files in CQMFloatingController/Classes to your project, and write code as below:
+1. Add all files in `CQMFloatingController/Classes` to your project
+2. Write code as below:
 
 ```Objective-C
 // Import a required class
 #import "CQMFloatingController.h"
 
-
 - (void)show {
     // Prepare content view controller
     SomeViewController *viewController = [[[SomeViewController alloc] init] autorelease];
-        
-    // Show floating controller
+
+    // Get shared floating controller, and customize if needed
     CQMFloatingController *floatingController = [CQMFloatingController sharedFloatingController];
+    [floatingController setFrameColor:[UIColor orangeColor]];
+        
+    // Show floating controller with content
     [floatingController presentWithContentViewController:viewController
                                                 animated:YES];
 }
