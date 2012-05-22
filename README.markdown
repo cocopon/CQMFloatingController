@@ -16,6 +16,12 @@ Features
 - Customizable frame color
 
 
+Screenshots
+-----------
+![Screenshot0](http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/0.png)
+![Screenshot1](http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/1.png)
+
+
 How to Use
 ----------
 1. Add all files in `CQMFloatingController/Classes` to your project
@@ -38,12 +44,6 @@ How to Use
                                                 animated:YES];
 }
 ```
-
-
-Screenshots
------------
-![Screenshot0](http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/0.png)
-![Screenshot1](http://dotapon.sakura.ne.jp/github/CQMFloatingController/screenshots/1.png)
 
 
 License
