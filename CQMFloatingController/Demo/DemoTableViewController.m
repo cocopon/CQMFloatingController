@@ -35,6 +35,8 @@
 
 @property (nonatomic, readonly, retain) NSArray *texts;
 
++ (NSArray*)testData;
+
 @end
 
 
@@ -56,14 +58,23 @@
 
 - (NSArray*)texts {
 	if (texts_ == nil) {
-		texts_ = [[NSArray alloc] initWithObjects:
-				  @"Foo",
-				  @"Bar",
-				  @"Baz",
-				  @"Qux",
-				  nil];
+		texts_ = [[DemoTableViewController testData] retain];
 	}
 	return texts_;
+}
+
+
+#pragma mark -
+
+
++ (NSArray*)testData {
+	NSMutableArray *data = [[[NSMutableArray alloc] init] autorelease];
+	
+	for (unichar ch = 'A'; ch <= 'Z'; ch++) {
+		[data addObject:[NSString stringWithFormat:@"%C%C%C", ch, ch, ch]];
+	}
+	
+	return data;
 }
 
 

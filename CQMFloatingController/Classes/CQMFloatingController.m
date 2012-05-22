@@ -242,10 +242,9 @@
 	
 	// Content
 	UIView *contentView = [self contentView];
-	CGFloat contentFrameWidth = [CQMFloatingContentOverlayView frameWidth];
-	CGRect contentFrame = CGRectMake(kFramePadding - contentFrameWidth, 0,
-									 frameSize.width - (kFramePadding - contentFrameWidth) * 2,
-									 frameSize.height - (kFramePadding - contentFrameWidth));
+	CGRect contentFrame = CGRectMake(kFramePadding, 0,
+									 frameSize.width - kFramePadding * 2,
+									 frameSize.height - kFramePadding);
 	CGSize contentSize = contentFrame.size;
 	[contentView setFrame:contentFrame];
 	
@@ -259,10 +258,12 @@
 	
 	// Content overlay
 	UIView *contentOverlay = [self contentOverlayView];
+	CGFloat contentFrameWidth = [CQMFloatingContentOverlayView frameWidth];
 	[contentOverlay setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
-	[contentOverlay setFrame:CGRectMake(0, navBarHeight - contentFrameWidth,
-										contentSize.width,
-										contentSize.height - (navBarHeight - contentFrameWidth))];
+	[contentOverlay setFrame:CGRectMake(contentFrame.origin.x - contentFrameWidth,
+										contentFrame.origin.y + navBarHeight - contentFrameWidth,
+										contentSize.width  + contentFrameWidth * 2,
+										contentSize.height - navBarHeight + contentFrameWidth * 2)];
 	[contentOverlay.superview bringSubviewToFront:contentOverlay];
 	
 	// Shadow
@@ -338,7 +339,7 @@
 	[self.view addSubview:[self frameView]];
 	[self.frameView addSubview:[self contentView]];
 	[self.contentView addSubview:[self.navigationController view]];
-	[self.contentView addSubview:[self contentOverlayView]];
+	[self.frameView addSubview:[self contentOverlayView]];
 }
 
 

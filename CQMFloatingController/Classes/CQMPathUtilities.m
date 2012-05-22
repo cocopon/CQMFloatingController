@@ -55,7 +55,10 @@ CGPathRef CQMPathCreateRoundingRect(CGRect rect, CGFloat blRadius, CGFloat brRad
 }
 
 
-CGPathRef CQMPathCreateInvertedRoundingRect(CGPoint tlPoint, CGPoint brPoint, CGFloat blRadius, CGFloat brRadius, CGFloat trRadius, CGFloat tlRadius) {
+CGPathRef CQMPathCreateInvertedRoundingRect(CGRect rect, CGFloat blRadius, CGFloat brRadius, CGFloat trRadius, CGFloat tlRadius) {
+	CGPoint tlPoint = rect.origin;
+	CGPoint brPoint = CGPointMake(rect.origin.x + rect.size.width,
+								  rect.origin.y + rect.size.height);
 	CGMutablePathRef path = CGPathCreateMutable();
 	
 	// Top left

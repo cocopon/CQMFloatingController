@@ -27,4 +27,4 @@
 
 
 CGPathRef CQMPathCreateRoundingRect(CGRect rect, CGFloat blRadius, CGFloat brRadius, CGFloat trRadius, CGFloat tlRadius);
-CGPathRef CQMPathCreateInvertedRoundingRect(CGPoint tlPoint, CGPoint brPoint, CGFloat blRadius, CGFloat brRadius, CGFloat trRadius, CGFloat tlRadius);
+CGPathRef CQMPathCreateInvertedRoundingRect(CGRect rect, CGFloat blRadius, CGFloat brRadius, CGFloat trRadius, CGFloat tlRadius);
