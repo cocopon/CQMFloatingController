@@ -40,6 +40,7 @@
 #define kShadowOffset      CGSizeMake(0, 2.0f)
 #define kShadowOpacity     0.70f
 #define kShadowRadius      10.0f
+#define kAnimationDuration 0.3f
 
 
 @interface CQMFloatingController()
@@ -51,7 +52,6 @@
 @property (nonatomic, readonly, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) UIImageView *shadowView;
 
-- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
 // Actions
 - (void)maskControlDidTouchUpInside:(id)sender;
 
@@ -273,38 +273,27 @@
 	[frameView.layer setShadowPath:shadowPath];
 	CGPathRelease(shadowPath);
 	
-	if (animated) {
-		[UIView beginAnimations:nil context:NULL];
-	}
-	
-	[self.view setAlpha:1.0f];
-	
-	if (animated) {
-		[UIView commitAnimations];
-	}
+	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
+					 animations:
+	 ^(void) {
+		 [self.view setAlpha:1.0f];
+	 }];
 }
 
 
 - (void)dismissAnimated:(BOOL)animated {
-	if (animated) {
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDelegate:self];
-		[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
+					 animations:
+	 ^(void) {
 		[self.view setAlpha:0];
-		[UIView commitAnimations];
-	}
-	else {
-		[self.view removeFromSuperview];
-	}
-}
-
-
-- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-	if ([finished boolValue]) {
-		[self.view removeFromSuperview];
-		
-		presented_ = NO;
-	}
+	 }
+					 completion:
+	 ^(BOOL finished) {
+		 if (finished) {
+			 [self.view removeFromSuperview];
+			 presented_ = NO;
+		 }
+	 }];
 }
 
 
