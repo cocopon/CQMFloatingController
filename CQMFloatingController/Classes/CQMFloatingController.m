@@ -214,7 +214,6 @@
 		presented_ = YES;
 	}
 	
-	[self retain];
 	[self.view setAlpha:0];
 	
 	if (contentViewController_ != viewController) {
@@ -296,7 +295,6 @@
 	}
 	else {
 		[self.view removeFromSuperview];
-		[self autorelease];
 	}
 }
 
@@ -304,7 +302,6 @@
 - (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
 	if ([finished boolValue]) {
 		[self.view removeFromSuperview];
-		[self autorelease];
 		
 		presented_ = NO;
 	}
