@@ -52,6 +52,7 @@
 @property (nonatomic, readonly, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) UIImageView *shadowView;
 
+- (void)layoutFrameView;
 // Actions
 - (void)maskControlDidTouchUpInside:(id)sender;
 
@@ -230,6 +231,33 @@
 	[self.view setFrame:[window convertRect:appFrame fromView:nil]];
 	[window addSubview:[self view]];
 	
+	[self layoutFrameView];
+	
+	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
+					 animations:
+	 ^(void) {
+		 [self.view setAlpha:1.0f];
+	 }];
+}
+
+
+- (void)dismissAnimated:(BOOL)animated {
+	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
+					 animations:
+	 ^(void) {
+		[self.view setAlpha:0];
+	 }
+					 completion:
+	 ^(BOOL finished) {
+		 if (finished) {
+			 [self.view removeFromSuperview];
+			 presented_ = NO;
+		 }
+	 }];
+}
+
+
+- (void)layoutFrameView {
 	// Frame
 	UIView *frameView = [self frameView];
 	CGSize viewSize = [self.view frame].size;
@@ -258,7 +286,6 @@
 	// Content overlay
 	UIView *contentOverlay = [self contentOverlayView];
 	CGFloat contentFrameWidth = [CQMFloatingContentOverlayView frameWidth];
-	[contentOverlay setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
 	[contentOverlay setFrame:CGRectMake(contentFrame.origin.x - contentFrameWidth,
 										contentFrame.origin.y + navBarHeight - contentFrameWidth,
 										contentSize.width  + contentFrameWidth * 2,
@@ -272,28 +299,6 @@
 													 radius, radius, radius, radius);
 	[frameView.layer setShadowPath:shadowPath];
 	CGPathRelease(shadowPath);
-	
-	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
-					 animations:
-	 ^(void) {
-		 [self.view setAlpha:1.0f];
-	 }];
-}
-
-
-- (void)dismissAnimated:(BOOL)animated {
-	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
-					 animations:
-	 ^(void) {
-		[self.view setAlpha:0];
-	 }
-					 completion:
-	 ^(BOOL finished) {
-		 if (finished) {
-			 [self.view removeFromSuperview];
-			 presented_ = NO;
-		 }
-	 }];
 }
 
 
