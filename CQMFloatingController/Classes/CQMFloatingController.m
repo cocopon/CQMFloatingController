@@ -233,24 +233,26 @@
 	
 	[self layoutFrameView];
 	
+	__block CQMFloatingController *me = self;
 	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
 					 animations:
 	 ^(void) {
-		 [self.view setAlpha:1.0f];
+		 [me.view setAlpha:1.0f];
 	 }];
 }
 
 
 - (void)dismissAnimated:(BOOL)animated {
+	__block CQMFloatingController *me = self;
 	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
 					 animations:
 	 ^(void) {
-		[self.view setAlpha:0];
+		[me.view setAlpha:0];
 	 }
 					 completion:
 	 ^(BOOL finished) {
 		 if (finished) {
-			 [self.view removeFromSuperview];
+			 [me.view removeFromSuperview];
 			 presented_ = NO;
 		 }
 	 }];
