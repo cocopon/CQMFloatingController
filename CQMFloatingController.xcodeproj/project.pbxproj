@@ -23,6 +23,7 @@
 		F5C4225E1560BF2400F7E3EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C422451560BF2300F7E3EE /* Foundation.framework */; };
 		F5C422661560BF2400F7E3EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5C422641560BF2400F7E3EE /* InfoPlist.strings */; };
 		F5C422691560BF2400F7E3EE /* CQMFloatingControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C422681560BF2400F7E3EE /* CQMFloatingControllerTests.m */; };
+		F5EB409B1579C0640033C162 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EB409A1579C0640033C162 /* DemoViewController.m */; };
 		F5ED3EA315620A810058C7F1 /* CQMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ED3EA015620A810058C7F1 /* CQMAppDelegate.m */; };
 		F5ED3EA415620A810058C7F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ED3EA115620A810058C7F1 /* main.m */; };
 		F5ED3EA515620A810058C7F1 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5ED3EA215620A810058C7F1 /* MainWindow.xib */; };
@@ -41,7 +42,7 @@
 /* Begin PBXFileReference section */
 		F5455C8A156465C3009DD74D /* CQMFloatingNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingNavigationBar.h; sourceTree = "<group>"; };
 		F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingNavigationBar.m; sourceTree = "<group>"; };
-		F5455C8C156465C3009DD74D /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CQMPathUtilities.h; sourceTree = "<group>"; };
+		F5455C8C156465C3009DD74D /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMPathUtilities.h; sourceTree = "<group>"; };
 		F5455C8D156465C3009DD74D /* CQMPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMPathUtilities.m; sourceTree = "<group>"; };
 		F54E329A15620EE70057A34F /* CQMFloatingFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingFrameView.h; sourceTree = "<group>"; };
 		F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingFrameView.m; sourceTree = "<group>"; };
@@ -66,6 +67,8 @@
 		F5C422651560BF2400F7E3EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F5C422671560BF2400F7E3EE /* CQMFloatingControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQMFloatingControllerTests.h; sourceTree = "<group>"; };
 		F5C422681560BF2400F7E3EE /* CQMFloatingControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingControllerTests.m; sourceTree = "<group>"; };
+		F5EB40991579C0640033C162 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		F5EB409A1579C0640033C162 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		F5ED3E9F15620A810058C7F1 /* CQMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMAppDelegate.h; sourceTree = "<group>"; };
 		F5ED3EA015620A810058C7F1 /* CQMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMAppDelegate.m; sourceTree = "<group>"; };
 		F5ED3EA115620A810058C7F1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				F54E32AF156271030057A34F /* DemoTableViewController.m */,
 				F54E32B1156273780057A34F /* DemoDetailViewController.h */,
 				F54E32B2156273780057A34F /* DemoDetailViewController.m */,
+				F5EB40991579C0640033C162 /* DemoViewController.h */,
+				F5EB409A1579C0640033C162 /* DemoViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				F54E32B3156273780057A34F /* DemoDetailViewController.m in Sources */,
 				F5455C8E156465C3009DD74D /* CQMFloatingNavigationBar.m in Sources */,
 				F5455C8F156465C3009DD74D /* CQMPathUtilities.m in Sources */,
+				F5EB409B1579C0640033C162 /* DemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

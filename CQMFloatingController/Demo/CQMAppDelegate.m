@@ -58,8 +58,10 @@
 	CQMFloatingController *floatingController = [CQMFloatingController sharedFloatingController];
 	
 	// 3. Show floating controller with specified content
-	[floatingController presentWithContentViewController:demoViewController
-												animated:YES];
+	UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+	[floatingController showInView:[rootViewController view]
+		 withContentViewController:demoViewController
+						  animated:YES];
 }
 
 
