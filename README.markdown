@@ -40,8 +40,11 @@ How to Use
     [floatingController setFrameColor:[UIColor orangeColor]];
         
     // Show floating controller with content
-    [floatingController presentWithContentViewController:viewController
-                                                animated:YES];
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    UIView *rootView = [window.rootViewController view];
+    [floatingController showInView:rootView
+         withContentViewController:viewController
+                          animated:YES];
 }
 ```
 
