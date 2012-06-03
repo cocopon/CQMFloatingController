@@ -1,6 +1,6 @@
 //
-// main.m
-// Created by cocopon on 2012/05/14.
+// CQMFloatingMaskControl.m
+// Created by cocopon on 2011/06/03.
 //
 // Copyright (c) 2012 cocopon <cocopon@me.com>
 // 
@@ -23,12 +23,37 @@
 // SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import "CQMFloatingMaskControl.h"
 
-#import "CQMAppDelegate.h"
 
-int main(int argc, char *argv[]) {
-	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CQMAppDelegate class]));
+@implementation CQMFloatingMaskControl {
+@private
+	id resizeDelegate_;
+}
+
+
+- (void)dealloc {
+	[self setResizeDelegate:nil];
+	[super dealloc];
+}
+
+
+#pragma mark -
+#pragma mark Property
+
+
+@synthesize resizeDelegate = resizeDelegate_;
+
+
+- (void)setFrame:(CGRect)frame {
+	[super setFrame:frame];
+	
+	SEL selector = @selector(floatingMaskControlDidResize:);
+	if ([self.resizeDelegate respondsToSelector:selector]) {
+		[self.resizeDelegate performSelector:selector
+								  withObject:self];
 	}
 }
+
+
+@end

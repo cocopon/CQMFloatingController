@@ -1,6 +1,6 @@
 //
-// main.m
-// Created by cocopon on 2012/05/14.
+// CQMFloatingMaskControl.h
+// Created by cocopon on 2012/06/03.
 //
 // Copyright (c) 2012 cocopon <cocopon@me.com>
 // 
@@ -23,12 +23,11 @@
 // SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-#import "CQMAppDelegate.h"
 
-int main(int argc, char *argv[]) {
-	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CQMAppDelegate class]));
-	}
-}
+@interface CQMFloatingMaskControl : UIControl
+
+@property (nonatomic, assign) id resizeDelegate;
+
+@end

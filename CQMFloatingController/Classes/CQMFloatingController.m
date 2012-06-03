@@ -27,6 +27,7 @@
 #import "CQMFloatingController.h"
 #import "CQMFloatingContentOverlayView.h"
 #import "CQMFloatingFrameView.h"
+#import "CQMFloatingMaskControl.h"
 #import "CQMFloatingNavigationBar.h"
 #import "CQMPathUtilities.h"
 
@@ -56,8 +57,8 @@
 - (void)layoutFrameView;
 // Actions
 - (void)maskControlDidTouchUpInside:(id)sender;
-// Notification
-- (void)deviceOrientationDidChangeNotification:(NSNotification*)notification;
+// Delegates
+- (void)floatingMaskControlDidResize:(CQMFloatingFrameView*)frameView;
 
 @end
 
@@ -68,7 +69,7 @@
 	CGSize landscapeFrameSize_;
 	CGSize portraitFrameSize_;
 	// View
-	UIControl *maskControl_;
+	CQMFloatingMaskControl *maskControl_;
 	CQMFloatingFrameView *frameView_;
 	UIView *contentView_;
 	CQMFloatingContentOverlayView *contentOverlayView_;
@@ -82,23 +83,12 @@
 		[self setPortraitFrameSize:kDefaultPortraitFrameSize];
 		[self setLandscapeFrameSize:kDefaultLandscapeFrameSize];
 		[self setFrameColor:kDefaultFrameColor];
-		
-		NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-		[center addObserver:self
-				   selector:@selector(deviceOrientationDidChangeNotification:)
-					   name:UIDeviceOrientationDidChangeNotification
-					 object:nil];
 	}
 	return self;
 }
 
 
 - (void)dealloc {
-	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-	[center removeObserver:self
-					  name:UIDeviceOrientationDidChangeNotification
-					object:nil];
-	
 	[contentViewController_ release];
 	[maskControl_ release];
 	[frameView_ release];
@@ -142,10 +132,11 @@
 }
 
 
-- (UIControl*)maskControl {
+- (CQMFloatingMaskControl*)maskControl {
 	if (maskControl_ == nil) {
-		maskControl_ = [[UIControl alloc] init];
+		maskControl_ = [[CQMFloatingMaskControl alloc] init];
 		[maskControl_ setBackgroundColor:kDefaultMaskColor];
+		[maskControl_ setResizeDelegate:self];
 		[maskControl_ addTarget:self
 						 action:@selector(maskControlDidTouchUpInside:)
 			   forControlEvents:UIControlEventTouchUpInside];
@@ -284,10 +275,12 @@
 
 - (void)layoutFrameView {
 	// Frame
-	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-	CGSize frameSize = UIDeviceOrientationIsPortrait(orientation) ? [self portraitFrameSize] : [self landscapeFrameSize];
-	UIView *frameView = [self frameView];
+	CGSize maskSize = [self.maskControl frame].size;
+	BOOL isPortrait = (maskSize.width <= maskSize.height);
+	CGSize frameSize = isPortrait ? [self portraitFrameSize] : [self landscapeFrameSize];
 	CGSize viewSize = [self.view frame].size;
+	UIView *frameView = [self frameView];
+	[frameView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
 	[frameView setFrame:CGRectMake(round((viewSize.width - frameSize.width) / 2),
 								   round((viewSize.height - frameSize.height) / 2),
 								   frameSize.width,
@@ -340,10 +333,10 @@
 
 
 #pragma mark -
-#pragma mark Notification
+#pragma mark Delegates
 
 
-- (void)deviceOrientationDidChangeNotification:(NSNotification*)notification {
+- (void)floatingMaskControlDidResize:(CQMFloatingFrameView*)frameView {
 	[self layoutFrameView];
 }
 

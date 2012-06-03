@@ -23,6 +23,7 @@
 		F5C4225E1560BF2400F7E3EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C422451560BF2300F7E3EE /* Foundation.framework */; };
 		F5C422661560BF2400F7E3EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5C422641560BF2400F7E3EE /* InfoPlist.strings */; };
 		F5C422691560BF2400F7E3EE /* CQMFloatingControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C422681560BF2400F7E3EE /* CQMFloatingControllerTests.m */; };
+		F5D47AF3157AEBD40064B7AF /* CQMFloatingMaskControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D47AF2157AEBD40064B7AF /* CQMFloatingMaskControl.m */; };
 		F5EB409B1579C0640033C162 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EB409A1579C0640033C162 /* DemoViewController.m */; };
 		F5ED3EA315620A810058C7F1 /* CQMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ED3EA015620A810058C7F1 /* CQMAppDelegate.m */; };
 		F5ED3EA415620A810058C7F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ED3EA115620A810058C7F1 /* main.m */; };
@@ -67,6 +68,8 @@
 		F5C422651560BF2400F7E3EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F5C422671560BF2400F7E3EE /* CQMFloatingControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQMFloatingControllerTests.h; sourceTree = "<group>"; };
 		F5C422681560BF2400F7E3EE /* CQMFloatingControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingControllerTests.m; sourceTree = "<group>"; };
+		F5D47AF1157AEBD40064B7AF /* CQMFloatingMaskControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingMaskControl.h; sourceTree = "<group>"; };
+		F5D47AF2157AEBD40064B7AF /* CQMFloatingMaskControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingMaskControl.m; sourceTree = "<group>"; };
 		F5EB40991579C0640033C162 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		F5EB409A1579C0640033C162 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		F5ED3E9F15620A810058C7F1 /* CQMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMAppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				F54E32AC15620F2F0057A34F /* CQMFloatingContentOverlayView.m */,
 				F54E329C15620EE70057A34F /* CQMFloatingController.h */,
 				F54E329D15620EE70057A34F /* CQMFloatingController.m */,
+				F5D47AF1157AEBD40064B7AF /* CQMFloatingMaskControl.h */,
+				F5D47AF2157AEBD40064B7AF /* CQMFloatingMaskControl.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				F5455C8E156465C3009DD74D /* CQMFloatingNavigationBar.m in Sources */,
 				F5455C8F156465C3009DD74D /* CQMPathUtilities.m in Sources */,
 				F5EB409B1579C0640033C162 /* DemoViewController.m in Sources */,
+				F5D47AF3157AEBD40064B7AF /* CQMFloatingMaskControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,9 +412,14 @@
 		F5C4226D1560BF2400F7E3EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CQMFloatingController/CQMFloatingController-Prefix.pch";
 				INFOPLIST_FILE = "CQMFloatingController/CQMFloatingController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -417,9 +428,14 @@
 		F5C4226E1560BF2400F7E3EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CQMFloatingController/CQMFloatingController-Prefix.pch";
 				INFOPLIST_FILE = "CQMFloatingController/CQMFloatingController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
