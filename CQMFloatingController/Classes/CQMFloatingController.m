@@ -258,7 +258,6 @@
 
 - (void)dismissAnimated:(BOOL)animated {
     if (animated) {
-        
         __block CQMFloatingController *me = self;
         [UIView animateWithDuration: kAnimationDuration
                          animations:
@@ -274,7 +273,6 @@
          }];
         
     } else {
-        
         [self.view removeFromSuperview];
         presented_ = NO;
     }
