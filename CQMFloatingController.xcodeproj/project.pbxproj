@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63BD792417910DC4005C4E33 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BD792317910DC4005C4E33 /* Default-568h@2x.png */; };
 		F5455C8E156465C3009DD74D /* CQMFloatingNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */; };
 		F5455C8F156465C3009DD74D /* CQMPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F5455C8D156465C3009DD74D /* CQMPathUtilities.m */; };
 		F54E32A615620EE70057A34F /* CQMFloatingFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F54E329B15620EE70057A34F /* CQMFloatingFrameView.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63BD792317910DC4005C4E33 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F5455C8A156465C3009DD74D /* CQMFloatingNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingNavigationBar.h; sourceTree = "<group>"; };
 		F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingNavigationBar.m; sourceTree = "<group>"; };
 		F5455C8C156465C3009DD74D /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMPathUtilities.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		F5C422341560BF2300F7E3EE = {
 			isa = PBXGroup;
 			children = (
+				63BD792317910DC4005C4E33 /* Default-568h@2x.png */,
 				F5C422491560BF2300F7E3EE /* CQMFloatingController */,
 				F5C422611560BF2400F7E3EE /* CQMFloatingControllerTests */,
 				F5C422421560BF2300F7E3EE /* Frameworks */,
@@ -280,6 +283,7 @@
 			files = (
 				F5C4224E1560BF2300F7E3EE /* InfoPlist.strings in Resources */,
 				F5ED3EA515620A810058C7F1 /* MainWindow.xib in Resources */,
+				63BD792417910DC4005C4E33 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
