@@ -24,10 +24,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CQMFloatingMaskControlDelegate.h"
 
 
 @interface CQMFloatingMaskControl : UIControl
 
-@property (nonatomic, unsafe_unretained) id resizeDelegate;
+@property (nonatomic, weak) id<CQMFloatingMaskControlDelegate> resizeDelegate;
 
 @end

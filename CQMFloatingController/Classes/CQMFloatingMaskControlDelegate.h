@@ -1,6 +1,6 @@
 //
-// CQMFloatingController.h
-// Created by cocopon on 2011/05/19.
+// CQMFloatingMaskControlDelegate.h
+// Created by cocopon on 2013/07/13.
 //
 // Copyright (c) 2012 cocopon <cocopon@me.com>
 // 
@@ -24,22 +24,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CQMFloatingMaskControlDelegate.h"
 
 
-@class CQMFloatingFrameView;
-@class CQMFloatingNavigationBar;
+@class CQMFloatingMaskControl;
 
 
-@interface CQMFloatingController : UIViewController<CQMFloatingMaskControlDelegate>
+@protocol CQMFloatingMaskControlDelegate<NSObject>
 
-@property (nonatomic) CGSize landscapeFrameSize;
-@property (nonatomic) CGSize portraitFrameSize;
-@property (nonatomic, strong) UIColor *frameColor;
-
-+ (CQMFloatingController*)sharedFloatingController;
-
-- (void)showInView:(UIView*)view withContentViewController:(UIViewController*)contentViewController animated:(BOOL)animated;
-- (void)dismissAnimated:(BOOL)animated;
+@optional
+- (void)floatingMaskControlDidResize:(CQMFloatingMaskControl*)maskControl;
 
 @end

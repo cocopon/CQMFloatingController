@@ -43,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		63BD792317910DC4005C4E33 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		63BD792517910E4A005C4E33 /* CQMFloatingMaskControlDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQMFloatingMaskControlDelegate.h; sourceTree = "<group>"; };
 		F5455C8A156465C3009DD74D /* CQMFloatingNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMFloatingNavigationBar.h; sourceTree = "<group>"; };
 		F5455C8B156465C3009DD74D /* CQMFloatingNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQMFloatingNavigationBar.m; sourceTree = "<group>"; };
 		F5455C8C156465C3009DD74D /* CQMPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQMPathUtilities.h; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 				F54E329D15620EE70057A34F /* CQMFloatingController.m */,
 				F5D47AF1157AEBD40064B7AF /* CQMFloatingMaskControl.h */,
 				F5D47AF2157AEBD40064B7AF /* CQMFloatingMaskControl.m */,
+				63BD792517910E4A005C4E33 /* CQMFloatingMaskControlDelegate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

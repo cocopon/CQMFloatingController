@@ -26,10 +26,7 @@
 #import "CQMFloatingMaskControl.h"
 
 
-@implementation CQMFloatingMaskControl {
-@private
-	id __unsafe_unretained resizeDelegate_;
-}
+@implementation CQMFloatingMaskControl
 
 
 - (void)dealloc {
@@ -41,16 +38,12 @@
 #pragma mark Property
 
 
-@synthesize resizeDelegate = resizeDelegate_;
-
-
 - (void)setFrame:(CGRect)frame {
 	[super setFrame:frame];
 	
 	SEL selector = @selector(floatingMaskControlDidResize:);
 	if ([self.resizeDelegate respondsToSelector:selector]) {
-		[self.resizeDelegate performSelector:selector
-								  withObject:self];
+		[self.resizeDelegate floatingMaskControlDidResize:self];
 	}
 }
 

@@ -57,8 +57,6 @@
 - (void)layoutFrameView;
 // Actions
 - (void)maskControlDidTouchUpInside:(id)sender;
-// Delegates
-- (void)floatingMaskControlDidResize:(CQMFloatingFrameView*)frameView;
 
 @end
 
@@ -326,7 +324,7 @@
 #pragma mark Delegates
 
 
-- (void)floatingMaskControlDidResize:(CQMFloatingFrameView*)frameView {
+- (void)floatingMaskControlDidResize:(CQMFloatingMaskControl*)maskControl {
 	[self layoutFrameView];
 }
 
