@@ -47,12 +47,12 @@
 
 @interface CQMFloatingController()
 
-@property (nonatomic, readonly, retain) UIControl *maskControl;
-@property (nonatomic, readonly, retain) CQMFloatingFrameView *frameView;
-@property (nonatomic, readonly, retain) UIView *contentView;
-@property (nonatomic, readonly, retain) CQMFloatingContentOverlayView *contentOverlayView;
-@property (nonatomic, readonly, retain) UINavigationController *navigationController;
-@property (nonatomic, retain) UIImageView *shadowView;
+@property (nonatomic, readonly, strong) UIControl *maskControl;
+@property (nonatomic, readonly, strong) CQMFloatingFrameView *frameView;
+@property (nonatomic, readonly, strong) UIView *contentView;
+@property (nonatomic, readonly, strong) CQMFloatingContentOverlayView *contentOverlayView;
+@property (nonatomic, readonly, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) UIImageView *shadowView;
 
 - (void)layoutFrameView;
 // Actions
@@ -88,16 +88,6 @@
 }
 
 
-- (void)dealloc {
-	[contentViewController_ release];
-	[maskControl_ release];
-	[frameView_ release];
-	[contentView_ release];
-	[contentOverlayView_ release];
-	[navController_ release];
-	[self setShadowView:nil];
-	[super dealloc];
-}
 
 
 #pragma mark -
@@ -179,7 +169,6 @@
 	if (navController_ == nil) {
 		UIViewController *dummy = [[UIViewController alloc] init];
 		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:dummy];
-		[dummy release];
 		
 		// Archive navigation controller for changing navigationbar class
 		[navController navigationBar];
@@ -187,17 +176,13 @@
 		NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
 		[archiver encodeObject:navController forKey:kRootKey];
 		[archiver finishEncoding];
-		[archiver release];
-		[navController release];
 		
 		// Unarchive it with changing navigationbar class
 		NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
 		[unarchiver setClass:[CQMFloatingNavigationBar class]
 				forClassName:NSStringFromClass([UINavigationBar class])];
-		navController_ = [[unarchiver decodeObjectForKey:kRootKey] retain];
-		[unarchiver release];
+		navController_ = [unarchiver decodeObjectForKey:kRootKey];
 		
-		[data release];
 	}
 	return navController_;
 }
@@ -235,8 +220,7 @@
 	
 	if (contentViewController_ != viewController) {
 		[[contentViewController_ view] removeFromSuperview];
-		[contentViewController_ release];
-		contentViewController_ = [viewController retain];
+		contentViewController_ = viewController;
 
 		NSArray *viewControllers = [NSArray arrayWithObject:contentViewController_];
 		[self.navigationController setViewControllers:viewControllers];

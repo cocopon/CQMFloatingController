@@ -34,7 +34,7 @@
 
 @property (nonatomic) CGSize landscapeFrameSize;
 @property (nonatomic) CGSize portraitFrameSize;
-@property (nonatomic, retain) UIColor *frameColor;
+@property (nonatomic, strong) UIColor *frameColor;
 
 + (CQMFloatingController*)sharedFloatingController;
 

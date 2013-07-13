@@ -28,13 +28,12 @@
 
 @implementation CQMFloatingMaskControl {
 @private
-	id resizeDelegate_;
+	id __unsafe_unretained resizeDelegate_;
 }
 
 
 - (void)dealloc {
 	[self setResizeDelegate:nil];
-	[super dealloc];
 }
 
 

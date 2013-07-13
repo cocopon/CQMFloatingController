@@ -31,10 +31,6 @@
 @implementation CQMAppDelegate
 
 
-- (void)dealloc {
-	[window_ release];
-    [super dealloc];
-}
 
 
 #pragma mark -
@@ -52,7 +48,7 @@
 	// To use CQMFloatingController:
 	
 	// 1. Prepare a content view controller
-	DemoTableViewController *demoViewController = [[[DemoTableViewController alloc] init] autorelease];
+	DemoTableViewController *demoViewController = [[DemoTableViewController alloc] init];
 	
 	// 2. Get shared floating controller
 	CQMFloatingController *floatingController = [CQMFloatingController sharedFloatingController];

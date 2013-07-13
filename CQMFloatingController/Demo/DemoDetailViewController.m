@@ -35,7 +35,7 @@
 
 @interface DemoDetailViewController()
 
-@property (nonatomic, readonly, retain) UILabel *textLabel;
+@property (nonatomic, readonly, strong) UILabel *textLabel;
 
 @end
 
@@ -46,10 +46,6 @@
 	UILabel *label_;
 }
 
-- (void)dealloc {
-	[label_ release];
-	[super dealloc];
-}
 
 
 #pragma mark -

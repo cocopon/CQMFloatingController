@@ -28,7 +28,7 @@
 
 @interface CQMFloatingFrameView : UIView
 
-@property (nonatomic, retain) UIColor *baseColor;
+@property (nonatomic, strong) UIColor *baseColor;
 @property (nonatomic) CGFloat cornerRadius;
 
 @end

@@ -33,7 +33,7 @@
 
 @interface DemoTableViewController()
 
-@property (nonatomic, readonly, retain) NSArray *texts;
+@property (nonatomic, readonly, strong) NSArray *texts;
 
 + (NSArray*)testData;
 
@@ -46,10 +46,6 @@
 }
 
 
-- (void)dealloc {
-	[texts_ release];
-	[super dealloc];
-}
 
 
 #pragma mark -
@@ -58,7 +54,7 @@
 
 - (NSArray*)texts {
 	if (texts_ == nil) {
-		texts_ = [[DemoTableViewController testData] retain];
+		texts_ = [DemoTableViewController testData];
 	}
 	return texts_;
 }
@@ -68,7 +64,7 @@
 
 
 + (NSArray*)testData {
-	NSMutableArray *data = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *data = [[NSMutableArray alloc] init];
 	
 	for (unichar ch = 'A'; ch <= 'Z'; ch++) {
 		[data addObject:[NSString stringWithFormat:@"%C%C%C", ch, ch, ch]];
@@ -90,8 +86,8 @@
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-									   reuseIdentifier:kCellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+									   reuseIdentifier:kCellIdentifier];
 	}
 	
 	NSString *text = [self.texts objectAtIndex:[indexPath row]];
@@ -111,7 +107,6 @@
 	[detailViewController setText:text];
 	[self.navigationController pushViewController:detailViewController
 										 animated:YES];
-	[detailViewController release];
 }
 
 

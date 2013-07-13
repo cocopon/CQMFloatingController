@@ -29,7 +29,7 @@
 @interface CQMFloatingContentOverlayView : UIView
 
 @property (nonatomic) CGFloat cornerRadius;
-@property (nonatomic, retain) UIColor *edgeColor;
+@property (nonatomic, strong) UIColor *edgeColor;
 
 + (CGFloat)frameWidth;
 

@@ -49,10 +49,6 @@
 }
 
 
-- (void)dealloc {
-	[edgeColor_ release];
-	[super dealloc];
-}
 
 
 #pragma mark -
@@ -77,10 +73,7 @@
 	return edgeColor_;
 }
 - (void)setEdgeColor:(UIColor*)edgeColor {
-	if (edgeColor_ != edgeColor) {
-		[edgeColor_ release];
-		edgeColor_ = [edgeColor retain];
-	}
+	edgeColor_ = edgeColor;
 	[self setNeedsDisplay];
 }
 

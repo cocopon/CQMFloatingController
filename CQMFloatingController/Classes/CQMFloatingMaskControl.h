@@ -28,6 +28,6 @@
 
 @interface CQMFloatingMaskControl : UIControl
 
-@property (nonatomic, assign) id resizeDelegate;
+@property (nonatomic, unsafe_unretained) id resizeDelegate;
 
 @end
