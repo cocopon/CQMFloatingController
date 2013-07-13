@@ -257,19 +257,25 @@
 
 
 - (void)dismissAnimated:(BOOL)animated {
-	__block CQMFloatingController *me = self;
-	[UIView animateWithDuration:(animated ? kAnimationDuration : 0)
-					 animations:
-	 ^(void) {
-		[me.view setAlpha:0];
-	 }
-					 completion:
-	 ^(BOOL finished) {
-		 if (finished) {
-			 [me.view removeFromSuperview];
-			 presented_ = NO;
-		 }
-	 }];
+    if (animated) {
+        __block CQMFloatingController *me = self;
+        [UIView animateWithDuration: kAnimationDuration
+                         animations:
+         ^(void) {
+             [me.view setAlpha:0];
+         }
+                         completion:
+         ^(BOOL finished) {
+             if (finished) {
+                 [me.view removeFromSuperview];
+                 presented_ = NO;
+             }
+         }];
+        
+    } else {
+        [self.view removeFromSuperview];
+        presented_ = NO;
+    }
 }
 
 
